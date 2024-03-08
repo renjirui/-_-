@@ -96,7 +96,6 @@ axios({
     }
     console.log("秘书处的人数",accountSix)
 }).catch((error)=>{error})
-setTimeout(()=>console.log(accountSix),2000)
 // 定义图表的配置和数据  
 setTimeout(()=>{
     const myChart = new Chart(ctx, {  

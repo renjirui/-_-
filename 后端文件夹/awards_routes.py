@@ -1,9 +1,11 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
+from depands import get_current_username
 from models import AwardsInfo, AwardsInfo_AwardsID
 import pymysql
 from database import get_db_connection
 from typing import List
 
+# router = APIRouter(dependencies=[Depends(get_current_username)])
 router = APIRouter()
 
 # 查看所有学生获奖信息

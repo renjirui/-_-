@@ -51,3 +51,7 @@ class UserInfo(BaseModel):
 class Student_AwardsInfo(BaseModel):
     student_Model: Student
     awardsInfo_Model: List[AwardsInfo]
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
