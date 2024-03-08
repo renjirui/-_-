@@ -120,7 +120,21 @@ button2.onclick = function () {
     department:input4.value
     
     }
-    console.log(data);
+  console.log(data);
+  axios.interceptors.request.use(
+  config => {
+    if (localStorage.getItem('token')) {
+      // 如果后台要token这么写：
+      config.headers.token = localStorage.getItem('token')
+      // 如果后台要Authorization 这么写：config.headers.Authorization = `Bearer ` + localStorage.getItem('token')
+    }
+        return config
+    },
+    error =>{
+        return Promise.reject(error)
+    }
+)
+
     axios.post("http://101.200.73.250:31111/students/",data)
     .then(function (response) {
       // 处理成功情况
